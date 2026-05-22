@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Limelight&family=Special+Elite&display=swap');
+
+body {
+    font-family: 'Special Elite', monospace;
+    text-align: center;
+    background-color: #fdf5e6;
+    background-image: 
+        radial-gradient(#dcb897 2px, transparent 2px),
+        radial-gradient(#dcb897 2px, transparent 2px);
+    background-size: 40px 40px;
+    background-position: 0 0, 20px 20px;
+    padding: 20px;
+    color: #4a3b32;
+    margin: 0;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #8b2635;
+    padding: 30px;
+    border-radius: 20px 20px 0 0;
+    border: 6px solid #2b2118;
+    border-bottom: none;
+    box-shadow: 10px 10px 0px rgba(0,0,0,0.15);
+}
+
+h1 {
+    font-family: 'Limelight', cursive;
+    color: #fdf5e6;
+    text-shadow: 3px 3px 0px #2b2118;
+    letter-spacing: 3px;
+    margin-top: 0;
+    font-size: 2.5rem;
+}
+
+/* NOVO: Englobador para alinhar o vídeo e o canvas da IA */
+.monitor {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+video {
+    width: 100%;
+    border: 8px solid #2b2118;
+    border-radius: 10px;
+    transform: scale(-1, 1);
+    background-color: #000;
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.5);
+}
+
+/* NOVO: Canvas de sobreposição da Inteligência Artificial */
+#overlay {
+    position: absolute;
+    top: 8px; /* Ajuste para a borda do vídeo */
+    left: 8px; /* Ajuste para a borda do vídeo */
+    width: calc(100% - 16px);
+    height: calc(100% - 16px);
+    transform: scale(-1, 1); /* Espelha junto com o vídeo */
+    pointer-events: none; /* Para não bugar cliques na tela */
+}
+
+#loading-text {
+    color: #fdf5e6;
+    font-weight: bold;
+    margin-top: 15px;
+    text-transform: uppercase;
+}
+
+.botoes {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #d1a77e;
+    padding: 25px 30px;
+    border: 6px solid #2b2118;
+    border-radius: 0 0 20px 20px;
+    box-shadow: 10px 10px 0px rgba(0,0,0,0.15);
+    display: flex;
+    flex-flow: wrap;
+    justify-content: center;
+    gap: 12px;
+}
+
+button {
+    font-family: 'Special Elite', monospace;
+    font-size: 14px;
+    font-weight: bold;
+    background-color: #fdf5e6;
+    color: #2b2118;
+    border: 3px solid #2b2118;
+    border-radius: 6px;
+    padding: 10px 15px;
+    cursor: pointer;
+    box-shadow: 4px 4px 0px #2b2118;
+    transition: all 0.1s ease-in-out;
+    text-transform: uppercase;
+}
+
+button:hover {
+    background-color: #ffe6c2;
+}
+
+button:active {
+    box-shadow: 0px 0px 0px #2b2118;
+    transform: translate(4px, 4px);
+}
+
+.photos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding: 40px 20px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+canvas.polaroid {
+    width: 220px;
+    background-color: #fff;
+    padding: 12px 12px 45px 12px;
+    border: 1px solid #d5d5d5;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.3);
+    transform: rotate(-3deg);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+canvas.polaroid:nth-child(even) { transform: rotate(4deg); }
+canvas.polaroid:nth-child(3n) { transform: rotate(-5deg); }
+
+canvas.polaroid:hover {
+    transform: scale(1.1) rotate(0deg);
+    box-shadow: 10px 10px 25px rgba(0,0,0,0.5);
+    z-index: 10;
+    position: relative;
+}

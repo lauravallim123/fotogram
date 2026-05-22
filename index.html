@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Fotogram Vintage AI</title>
+</head>
+<body>
+    <div class="container" >
+        <h1>Tire sua selfie</h1>
+        <div class="monitor">
+            <video id="camera" autoplay muted playsinline></video>
+            <canvas id="overlay"></canvas>
+        </div>
+        <p id="loading-text">Carregando IA neural... aguarde 🤖</p>
+    </div>
+
+    <div class="botoes" >
+        <button onclick="capturarPhoto('normal')">📸 Normal</button>
+        <button onclick="capturarPhoto('cinza')" >⚫ Efeito Cinza</button>
+        <button onclick="capturarPhoto('antiga')" >🕰️ Efeito Antiga</button>
+        <button onclick="capturarPhoto('desfoque')">🌀 Efeito Desfoque</button>
+        <button onclick="capturarPhoto('brilho')">✨ Efeito Brilho</button>
+        <button onclick="capturarPhoto('saturacao')">🎨 Efeito Saturação</button>
+        <button onclick="capturarPhoto('opacity')">👻 Efeito Opacidade</button>
+        <button onclick="capturarPhoto('inverter')">🔄 Efeito Inverter</button>
+    </div>
+
+    <div class="botoes" style="margin-top: 10px; background-color: #a4c2a8;">
+        <button onclick="mudarAcessorio('nenhum')">❌ Sem Filtro</button>
+        <button onclick="mudarAcessorio('chapeu')">🎩 Chapéu</button>
+        <button onclick="mudarAcessorio('bigode')">👨 Bigode</button>
+        <button onclick="mudarAcessorio('coracoes')">❤️ Corações</button>
+        <button onclick="mudarAcessorio('cachorrinho')">🐶 Cachorrinho</button>
+    </div>
+
+    <br><br>
+    <div id="photos" class="photos" ></div>
+    
+    <!-- Usando versão mais recente do face-api.js -->
+    <script src="https://cdn.jsdelivr.net/npm/face-api.js@0.22.2/dist/face-api.min.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>
